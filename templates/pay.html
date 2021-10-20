@@ -1,0 +1,101 @@
+{% extends 'layout.html' %}
+ {% load static %}
+
+{% block title %}Payment Information{% endblock %}
+ {% block body %}
+   <img src="{% static 'img/bgnav.jpg' %}">
+ {% endblock %}
+
+
+{% block content %}
+                    <div class="col-lg-4">
+                        <section id="checkout-sidebar">
+                            <div class="checkout-sidebar__header">
+                                <h1>Checkout Summary</h1>
+                            </div>
+
+                            <div class="checkout-sidebar__content">
+                                <div class="payment-breakdown">
+                                    <h2>
+                                        Payment Details
+                                    </h2>
+                                    <div class="payment-breakdown__content">
+                                        <table class="table">
+                                            <tbody>
+                                            <tr>
+                                                <td>Subtotal</td>
+                                                <td class="text-right" id="subtotal">{{Ad.price}}
+                                                    TK.
+                                                </td>
+                                            </tr>
+                                            
+                                            
+                                            
+                                            <tr>
+                                                <td>Dealy Charge</td>
+                                                <td class="text-right" id="total">0
+                                                    TK.
+                                                </td>
+                                            </tr>
+                                            
+                                            
+                                                <tr>
+                                                    <td>Payable Total</td>
+                                                    <td class="text-right" id="payable">{{Ad.price}}
+                                                        TK.
+                                                    </td>
+                                                </tr>
+                                            
+                                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </section>
+                        <!-- End Checkout Sidebar -->
+                    </div>
+
+<section class="dorne-editors-pick-area bg-img  section-padding-100"style=" background-image: url({% static 'img/bg-img/bgli2.jpg' %});">
+
+
+                <div class="col-lg-3"">
+                    <section class="checkout-header">
+                            <h1>Payment Method</h1>
+                            <span class="payment-header__sub-title">(Please select <em>only one!</em> payment method)</span>
+                    </section>
+                        		<br><br>
+                       		 <div id="payment-option">
+                           <img style="width: 160px; height: 100px;" src="https://seeklogo.com/images/B/bkash-logo-FBB258B90F-seeklogo.com.png"
+                                            >
+                            <h5><b>bKash Payment</b></h5>
+                           </div>
+		                 	<ul>
+		                    	<li style="text-align: center;" > <b>bKash payment Id:   </b><strong>+8801511988670</strong></li>
+		                    	<li style="text-align: center;" > <b>Agent Name:   </b><strong>Prothom Alo</strong></li>
+		                    </ul>
+
+					
+
+					<br>
+					<br>
+
+                        		<br><br>
+                        	<div id="payment-option">
+                           <img style="width: 160px; height: 100px;" src="https://i.ytimg.com/vi/F6klV81qyxc/hqdefault.jpg"
+                                             >
+                            <h5><b>Rocket Payment</b></h5>
+                           </div>
+                 	<ul>
+                    	<li style="text-align: center;" > <b>Rocket Payment Id:   </b><strong>+8801511988670</strong></li>
+                    	<li style="text-align: center;" > <b>Agent Name:   </b><strong>Prothom Alo</strong></li>
+                    </ul>
+
+					</div>
+
+			<button onclick="window.location.href = '{% url 'home' %}';" style=" position: relative; background-color: lightgreen;" type="submit" class="btn dorne-btn"><b style="color: black">Done</b></button>
+
+</section>
+{% endblock %}
+

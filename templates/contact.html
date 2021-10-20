@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+ {% load static %}
+{% block title %}Contacts{% endblock %}
+ {% block body %}
+   <img src="{% static 'img/bgnav.jpg' %}">
+ {% endblock %}
+ {% block content %}
+
+    <!-- ***** Breadcumb Area Start ***** -->
+    <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-3.jpg)">
+    </div>
+    <!-- ***** Breadcumb Area End ***** -->
+
+    <!-- ***** Contact Area Start ***** -->
+    <div class="dorne-contact-area d-md-flex" id="contact">
+        <!-- Contact Form Area -->
+        <div class="contact-form-area equal-height">
+            <div class="contact-text">
+                <h4>Hello, Get in touch with us</h4>
+                <h6>We appreciate your business and guarantee a response within 24 Business hours which would include our Packages and Pricing.</h6>
+                <div class="contact-info d-lg-flex">
+                    <div class="single-contact-info">
+                        <h4>Visit Us:</h4>
+                        <h6><i class="fa fa-map-signs" aria-hidden="true"></i> United City, Madani Avenue,  Badda, Dhaka 1212, Bangladesh</h6>
+                        <br>
+                        <h4>Mail Us:</h4>
+                        <h6><i class="fa fa-envelope-o" aria-hidden="true"></i> info@bd-ads.ac.bd</h6>
+                        <br>
+                        <h4>Phone Us:</h4>
+                        <h6><i class="fa fa-phone" aria-hidden="true"></i> +88 015 2133 1226</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <div class="contact-form-title">
+                    <h6>Drop Us a Line</h6>
+                </div>
+                <form action="#">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name (required)">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input type="email" name="email" class="form-control" placeholder="Email Address (required)">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" name="subject" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="col-12">
+                            <textarea name="message" class="form-control" id="Message" cols="30" rows="10" placeholder="Your Message"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn dorne-btn">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+       
+    </div>
+    <!-- ***** Contact Area End ***** -->
+
+{% endblock %}
+
+
+  {% block js %}
+
+
+  {% endblock %}

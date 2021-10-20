@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+ {% load static %}
+{% block title %}Your Ad{% endblock %}
+ {% block body %}
+   <img src="{% static 'img/bgnav.jpg' %}">
+ {% endblock %}
+ {% block content %}
+		{% if user.is_publisher %}
+	<section class="dorne-features-destinations-area">
+        <div class="container-fluid" >
+			<div class="row">
+                <div class="col-4">
+                   <!--  <div class="features-slides owl-carousel"> -->
+					<!-- <div class="feature-content d-flex align-items-center justify-content-between"> -->
+ 						<div class="single-features-area">
+                            <h2>{{ads.publisher}}</h2>
+                            <p><b>{{ads.created_date}}</b></p>
+                            <div class="feature-title">
+                             		<h5>{{ads.title}}</h5>
+                                    <h6>Ad Type: <b>{{ads.adtype}}</b></h6>
+                                    <h6>Ad Category: <b>{{ads.adCategory}}</b></h6>
+                                    <h6>Price: <b style=" color : red;">{{ads.price}} Tk.</b></h6>
+                            </div>
+                        </div>
+                   <!--  </div>	 -->
+                   <!--  </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+        
+
+
+
+
+        {% endif %}		
+{% endblock %}

@@ -1,0 +1,369 @@
+{% extends 'layout.html' %}
+ {% load static %}
+ {% block title %}BD-Ads{% endblock %}
+
+{% block content %}
+    <!-- ***** Welcome Area Start ***** -->
+    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url({% static 'img/bg-img/bgli4.jpg' %});">
+        <div class="container h-100">
+            <div class="row h-50 align-items-center justify-content-center">
+                <div class="col-12 col-md-10">
+
+                    <!-- Hero Search Form -->
+                    <div class="hero-search-form">
+
+                        <!-- Tabs -->
+                        {% if user.is_authenticated %}
+                        <div class="nav nav-tabs" id="heroTab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-news-tab" data-toggle="tab" href="#nav-news" role="tab" aria-controls="nav-news" aria-selected="true">Newspaper</a>
+                            <a class="nav-item nav-link" id="nav-tv-tab" data-toggle="tab" href="#nav-tv" role="tab" aria-controls="nav-tv" aria-selected="false">Television</a>
+                            <!--a class="nav-item nav-link" id="nav-media-tab" data-toggle="tab" href="#nav-media" role="tab" aria-controls="nav-media" aria-selected="false">Media</a-->
+                        </div>
+                        {% endif %}
+                        {% if user.is_authenticated %}
+                        <!-- Tabs Content -->
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-news" role="tabpanel" aria-labelledby="nav-news-tab">
+                                <h6>What are you looking for?</h6>
+                               <p><b>Publishers     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;    Ad Categories &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;   Ad Type </b></p>
+                                <form  method="get">
+
+                                    {{ filter.form.publisher }} 
+                                    &nbsp; &nbsp;
+                                    <select class="custom-select">
+                                        <option selected>Ad Categories</option>
+                                        <option value="1">Education</option>
+                                        <option value="2">Business</option> 
+                                        <option value="3">Recruitment Job</option> 
+                                    </select>
+
+                                    <select class="custom-select">
+                                        <option selected>Ad type</option>
+                                        <option value="1">Text Classified</option> 
+                                        <option value="2">Image Classified</option>                           
+                                    </select>
+                                    <button type="submit" class="btn dorne-btn">Search</button>
+
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="nav-tv" role="tabpanel" aria-labelledby="nav-tv-tab">
+                                <h6>What are you looking for?</h6>
+                                <form action="#" method="get">
+                                    <select class="custom-select">
+                                        <option selected>Television Channels</option>
+                                        <option value="1">Bangladesh Television</option>
+                                        <option value="2">Channel I</option>
+                                        <option value="3">NTv</option>
+                                        <option value="4">Dipto Tv</option>
+                                        <option value="5">ATN Bangla</option>
+                                        <option value="5">Ekattor TV</option>
+                                    </select>
+                                    <select class="custom-select">
+                                        <option selected>Ad Catagories</option>
+                                        <option value="1">Educational</option>
+                                        <option value="2">Rental</option>
+                                        <option value="3">Product</option>
+                                        <option value="4">Marriage</option>
+                                    </select>
+                                    <select class="custom-select">
+                                        <option selected>Ad type</option>
+                                        <option value="1">Video Classified</option>
+                                    </select>
+                                    <button type="submit" class="btn dorne-btn"><i class="fa fa-search pr-2" aria-hidden="true"></i> Search</button>
+                                </form>
+                            </div>
+
+                            <!--div class="tab-pane fade" id="nav-media" role="tabpanel" aria-labelledby="nav-media-tab">
+                                <h6>What are you looking for?</h6>
+                                <form action="#" method="get">
+                                    <select class="custom-select">
+                                        <option selected>Online Medias</option>
+                                        <option value="1">Facebook</option>
+                                        <option value="2">Youtube</option>
+                                        <option value="3">Online Games</option>
+                                        <option value="4">Online Blogs</option>
+                                    </select>
+                                    <select class="custom-select">
+                                        <option selected>Ad Catagories</option>
+                                        <option value="1">Product</option>
+                                    </select>
+                                    <select class="custom-select">
+                                        <option selected>Ad type</option>
+                                        <option value="1">Image Classified</option>
+                                        <option value="2">Video Classified</option>
+                                    </select>
+                                    <button type="submit" class="btn dorne-btn"><i class="fa fa-search pr-2" aria-hidden="true"></i> Search</button>
+                                </form>
+                            </div-->
+                        </div>
+                        {% else %}
+
+                            <div class="hero-content">
+                                <h2>The only ptatform to choose your desired advertiser.</h2>
+                            </div>
+
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+        <!-- Hero Social Btn 
+        
+        <div class="hero-social-btn">
+            <div class="social-title d-flex align-items-center">
+                <h6>Follow us on Social Media</h6>
+                <span></span>
+            </div>
+            <div class="social-btns">
+                <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
+                <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
+                <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
+            </div>
+        </div>
+    </section>
+-->
+    <!-- ***** Welcome Area End ***** -->
+
+
+   <!--  <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-1.jpg)"></div> -->
+    <!-- ***** Breadcumb Area End ***** -->
+ {% if user.is_authenticated %}
+    <!-- ***** Listing Destinations Area Start ***** -->
+   <section class="dorne-editors-pick-area bg-img bg-overlay section-padding-100"style=" background-image: url({% static 'img/bg-img/bgli2.jpg' %});">
+        <div class="container-fluid" >
+            <div class="row">
+                <div class="col-12">
+                     <div class="section-heading text-center">
+                        <span></span>
+                         <h4 > Available slots for Newspaper Advertisements</h4>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="features-slides owl-carousel">
+                        {% for ad in filter.qs %}
+                        {% if ad.is_accepted == 0 and ad.is_paid == 0 %}
+                        {% if ad.publisher.publisher_type != "" %}
+                        {% if ad.publisher.is_customer == 0 %}
+                        <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="single-features-area">
+                            <!-- <img src="img/publisher-img/prothom_alo.png" alt="">    -->
+                          
+                                <h2>{{ad.publisher}}</h2>
+                                <p><b>{{ad.created_date}}</b></p>
+                                <div class="feature-title">
+                                    <h5>{{ad.title}}</h5>
+                                    <h6>Ad Type: <b>{{ad.adtype}}</b></h6>
+                                    <h6>Ad Category: <b>{{ad.adCategory}}</b></h6>
+                                    <h6>Price: <b style=" color : red;">{{ad.price}} Tk.</b></h6>
+                                </div>
+                    <button class="btn dorne-btn" onclick="window.location.href = '{% url 'addreq' ad.pk %}';">Request</button>
+                            </div>
+                        </div>
+                        {% else %}
+                        <h4 > There is no Advertisements for this Publisher </h4>
+                         {% endif %}
+                        {% else %}
+                         <h4 > There is no slots for Newspaper Advertisements</h4>
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+   
+    <!-- ***** Catagory Area End ***** -->
+
+    <!-- ***** About Area Start ***** 
+    <section class="dorne-about-area section-padding-0-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="about-content text-center">
+                        <h2>Discover to advertise in Bangladesh with <br><span>BD-Ads</span></h2>
+                        <a href="publisher_layouts_1.html"><img src="{% static 'img/television.png' %}" alt="Television"></a>
+                        <a href="contact.html"><img src="{% static 'img/newspaper.png' %}" alt="Newspaper" style="margin-left: 50px;"></a>
+                        <a href="contact.html"><img src="{% static 'img/SM.gif' %}" alt="Social Media" style="width:256px;height:256px;margin-left: 50px;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+    <!-- ***** About Area End ***** -->
+    <!-- ***** Editor Pick Area Start ***** -->
+    <section class="dorne-editors-pick-area bg-img bg-overlay section-padding-100" style="background-image: url({% static 'img/bg-img/bgli3.jpg' %});">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                         <!-- ***** Catagory Area Start ***** -->
+                 <div class="section-heading text-center">
+                    <div class="all-catagories">
+                        <div class="row">
+                            <!-- Single Catagory Area -->
+                            <div class="col-12 col-sm-6 col-md ">
+                                <div class="single-catagory-area wow fadeInUpBig bg-overlay-9" data-wow-delay="0.2s">
+                                    <div class="catagory-content ">
+                                        <img src="{% static 'img/core-img/tv.png' %}" alt="">
+                                        <a href="tv/">
+                                            <h6>Television</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Catagory Area -->
+                            <div class="col-12 col-sm-6 col-md">
+                                <div class="single-catagory-area wow fadeInUpBig bg-overlay-9" data-wow-delay="0.4s">
+                                    <div class="catagory-content">
+                                        <img src="{% static 'img/core-img/news.png' %}" alt="">
+                                        <a href="news/">
+                                            <h6>Newspaper</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Catagory Area 
+                                                       <div class="col-12 col-md">
+                                <div class="single-catagory-area wow fadeInUpBig bg-overlay-9" data-wow-delay="1s">
+                                    <div class="catagory-content">
+                                        <img src="{% static 'img/core-img/billboard.png' %}" alt="">
+                                        <a href="#">
+                                            <h6>Billboard</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+                            <!-- Single Catagory Area 
+
+                             <div class="col-12 col-sm-6 col-md">
+                                <div class="single-catagory-area wow fadeInUpBig bg-overlay-9" data-wow-delay="0.6s">
+                                    <div class="catagory-content">
+                                        <img src="{% static 'img/core-img/m.png' %}" alt="">
+                                        <a href="#">
+                                            <h6>Magazine</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+                            <!-- Single Catagory Area -->
+                            <div class="col-12 col-sm-6 col-md">
+                                <div class="single-catagory-area wow fadeInUpBig bg-overlay-9" data-wow-delay="0.8s">
+                                    <div class="catagory-content">
+                                        <img src="{% static 'img/core-img/media.jpg' %}" alt="">
+                                        <a href="online/">
+                                            <h6>Social Media</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                     <div class="section-heading text-center">
+                        <span></span>
+                        <h4>Everything you would expect</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.2s">
+                    	<div class="add-more">
+                    		<span class="mega-octicon octicon-watch"></span>
+                        	<a href="#">Less Time</a>
+                    	</div>
+                    	<p></p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.4s">
+                    	<div class="add-more">
+                    		<span class="mega-octicon octicon-thumbsup"></span>
+                        	<a href="#">Minimizing trouble</a>
+                    	</div>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">   
+                    <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.6s">
+                    	<div class="add-more">
+                    		<span class="mega-octicon octicon-search"></span>
+                        	<a href="#">Search based on Your Choice</a>
+                    	</div>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">   
+                    <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.6s">
+                    	<div class="add-more">
+                    		<span class="mega-octicon octicon-star"></span>
+                        	<a href="#">Rating based on best publisher</a>
+                    	</div>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ***** Features of BD-Ads ***** -->
+
+    <section class="dorne-features-destinations-area" style="background-color: #b2dfdb;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading dark text-center">
+                    	<span></span>
+                    	<h2>Why BD-Ads ?</h2>
+                    	<br>
+                        <h6>BD-Ads has simplified and given a complete makeover to the whole process of booking ads for different media platforms. Now there is no need for you to travel all the way to the respective offices. Nor do you need to write messages manually on forms. BD-Ads lets you do all this and more from the comfort of your home, office or even when you’re travelling.</h6>
+                        <br>
+                        <h6>BD-Ads has time and again proven itself to be an excellent platform for booking advertisements in any national and regional newspapers. You can choose from a variety of publications keeping in view your target audience, then select the category that suits your classified ad, and pay through a secure gateway. Advertisements in leading newspapers like Prothom Alo, The Daily Star, Ittefaq, Kaler Kantho, Bangladesh Pratidin and Samakal amongst others can be booked with the help of BD-Ads.</h6>
+                        <br>
+                        <h6>Customers can easily book different types of advertisements like Matrimonial, Recruitment, Property, Education, and Obituary ads by utilizing our services at reasonable prices. In addition, customized packages and proper media planning are also offered through us. We help you place your advertisements in magazines, in television and cinema, and through the digital medium.</h6>
+                        <br>
+                        <h6>Come experience the easy, quick and effortless way of booking ads now!</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ***** Clients Area Start ***** -->
+    <div class="dorne-clients-area section-padding-100">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                	<div class="section-heading dark text-center">
+                    	<span></span>
+                    	<h2>Our Clients</h2>
+                    </div>
+                    <div class="clients-logo d-md-flex align-items-center justify-content-around">
+                        <img src="{% static 'img/clients-img/pran.png' %}" alt="">
+                        <img src="{% static 'img/clients-img/airtel.png' %}" alt="">
+                        <img src="{% static 'img/clients-img/nestle.png' %}" alt="">
+                        <img src="{% static 'img/clients-img/dominospizza.png'%}" alt="">
+                    </div>
+                </div>
+            </div>
+            <a href="listing_publishers.html"><button type="submit" class="btn dorne-btn" style="display: block; margin: 0 auto;"><i class="fa fa-hand-o-right pr-2" aria-hidden="true" ></i> See More</button></a>
+        </div>
+    </div>
+    <!-- ***** Clients Area End ***** -->
+
+
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+ {% load static %}
+
+{% block title %}Accepted Requests{% endblock %}
+ {% block body %}
+   <img src="{% static 'img/bgnav.jpg' %}">
+ {% endblock %}
+
+
+{% block content %}
+
+ <!-- ***** Listing Destinations Area Start ***** -->
+   <section class="dorne-editors-pick-area bg-img bg-overlay section-padding-100"style=" background-image: url({% static 'img/bg-img/bgli2.jpg' %});">
+        <div class="container-fluid" >
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <span style="background-color: orange"></span>
+                             <h4 > Accepted Advertisements of your Requests </h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-5">
+                        {% for ad in cnt %}
+                        <br><br>
+                        {% if ad.is_accepted == 1 and ad.is_paid == 0 %}
+                            <div class="single-features-area">
+                            <!-- <img src="img/publisher-img/prothom_alo.png" alt=""> -->
+                          
+                                <h2>{{ad.publisher}}</h2>
+                                <p><b>{{ad.created_date}}</b></p>
+                                <div class="feature-title">
+                                    <h5>{{ad.title}}</h5>
+                                    <h6>Ad Type: <b>{{ad.adtype}}</b></h6>
+                                    <h6>Ad Category: <b>{{ad.adCategory}}</b></h6>
+                                    <h6>Price: <b style=" color : red;">{{ad.price}} Tk.</b></h6>
+                                </div>
+                            </div>
+                        <button style="background-color: MediumSeaGreen;"
+                         class="btn " onclick="window.location.href = '{% url 'pay' ad.pk %}';"><b>Complete Payment</b></button>
+                        {% endif %}                      
+
+                        {% endfor %}
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+  {% block js %}
+
+
+  {% endblock %}
